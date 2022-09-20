@@ -1,5 +1,5 @@
-import { getNode } from "../utils";
-import { screenLevelGenre } from "./level-genre"
+import { getNode, showScreen } from "../utils";
+import { screenLevelGenre, initScreenLevelGenre } from "./level-genre"
 
 export const screenWelcome = getNode(
   `<section class="main main--welcome js-main">
@@ -13,10 +13,9 @@ export const screenWelcome = getNode(
     </p>
   </section>`
 );
-
 const levelGenre = () => {
   showScreen(screenLevelGenre);
-
+  initScreenLevelGenre();
 };
 
 export const initScreenWelcome = () => {

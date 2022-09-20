@@ -16,3 +16,7 @@ export const showScreen = (screen) => {
   newScreen = screen;
   app.replaceChild(newScreen, oldScreen);
 };
+
+export const getRandomValue = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min);
+}

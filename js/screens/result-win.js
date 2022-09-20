@@ -1,8 +1,10 @@
-import { getNode } from "../utils";
+import { getNode, showScreen } from "../utils";
+import { screenWelcome, initScreenWelcome } from "./welcome";
+import { screenLevelGenre, initScreenLevelGenre } from "./level-genre";
 
 export const screenResultWin = getNode(
   `<section class="main main--result js-main">
-    <section class="logo" title="Угадай мелодию">
+    <section class="logo js-logo" title="Угадай мелодию">
       <h1>Угадай мелодию</h1>
     </section>
 
@@ -12,6 +14,25 @@ export const screenResultWin = getNode(
       <br>совершив 3 ошибки
     </div>
     <span class="main-comparison">Вы заняли 2 место из 10. Это&nbsp;лучше чем у&nbsp;80%&nbsp;игроков</span>
-    <span role="button" tabindex="0" class="main-replay">Сыграть ещё раз</span>
+    <span role="button" tabindex="0" class="main-replay js-main-replay">Сыграть ещё раз</span>
   </section>`
 );
+
+const levelMain = (e) => {
+  e.preventDefault();
+  showScreen(screenWelcome);
+  initScreenWelcome();
+};
+
+const levelGenre = (e) => {
+  e.preventDefault();
+  showScreen(screenLevelGenre);
+  initScreenLevelGenre();
+};
+
+export const initScreenResultWin = () => {
+  const mainReplay = document.querySelector(`.js-main-replay`);
+  mainReplay.addEventListener(`click`, levelGenre);
+  const logo = document.querySelector(`.js-logo`);
+  logo.addEventListener(`click`, levelMain);
+};
