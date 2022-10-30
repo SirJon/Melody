@@ -1,4 +1,4 @@
-import { getNode, showScreen } from "../utils";
+import { getNode, showScreen } from "../../utils";
 import { screenLevelGenre, initScreenLevelGenre } from "./level-genre"
 
 export const screenWelcome = getNode(

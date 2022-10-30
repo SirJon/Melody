@@ -1,4 +1,4 @@
-import { getNode, showScreen, getRandomValue } from "../utils";
+import { getNode, showScreen, getRandomValue } from "../../utils";
 import { screenResultWin, initScreenResultWin } from "./result-win";
 import { screenResultAttemptsEnd, initScreenResultAttemptsEnd } from "./result-attempts-end";
 import { screenResulTimeOver, initScreenResultTimeOver } from "./result-time-over";

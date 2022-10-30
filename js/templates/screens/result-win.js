@@ -1,4 +1,4 @@
-import { getNode, showScreen } from "../utils";
+import { getNode, showScreen } from "../../utils";
 import { screenWelcome, initScreenWelcome } from "./welcome";
 import { screenLevelGenre, initScreenLevelGenre } from "./level-genre";
 

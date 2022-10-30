@@ -1,11 +1,10 @@
 const app = document.querySelector(`.js-app`);
 
-let node;
 let oldScreen;
 let newScreen;
 
 export const getNode = (string) => {
-  node = document.createElement(`div`);
+  let node = document.createElement(`div`);
   node.innerHTML = string;
 
   return node.firstChild;
