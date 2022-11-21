@@ -1,8 +1,12 @@
-import { getNode, showScreen } from "../../utils";
-import { screenLevelArtist, initScreenLevelArtist } from "./level-artist";
+import AbstractView from "../../../AbstractView";
+export default class LevelGenreView extends AbstractView {
+  constructor(level) {
+    super();
+    this.level = level;
+  };
 
-export const screenLevelGenre = getNode(
-  `<section class="main main--level main--level-genre js-main">
+  get template() {
+    return   `<section class="main main--level main--level-genre js-main">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle cx="390" cy="390" r="370" class="timer-line"
         style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
@@ -84,21 +88,20 @@ export const screenLevelGenre = getNode(
       </form>
     </div>
   </section>`
-);
-
-const levelArtistGenre = () => {
-  showScreen(screenLevelArtist);
-  initScreenLevelArtist();
-};
-
-export const initScreenLevelGenre = () => {
-  const genreAnswersInputs = [...document.querySelectorAll(`.js-genre-answer-input`)];
-  genreAnswersInputs.forEach(it => it.checked = false);
-  const sendButton = document.querySelector(`.js-genre-answer-send`);
-  const onGenreAnswerClick = () => {
-    sendButton.disabled = !(genreAnswersInputs.some((it) => it.checked));
   };
-  onGenreAnswerClick();
-  genreAnswersInputs.forEach(it => it.addEventListener(`change`, onGenreAnswerClick));
-  sendButton.addEventListener(`click`, levelArtistGenre);
+
+  onClick(){
+  };
+
+  bind() {
+    const genreAnswersInputs = [...this.element.querySelectorAll(`.js-genre-answer-input`)];
+    genreAnswersInputs.forEach(it => it.checked = false);
+    const sendButton = this.element.querySelector(`.js-genre-answer-send`);
+    const onGenreAnswerClick = () => {
+      sendButton.disabled = !(genreAnswersInputs.some((it) => it.checked));
+    };
+    onGenreAnswerClick();
+    genreAnswersInputs.forEach(it => it.addEventListener(`change`, onGenreAnswerClick));
+    sendButton.addEventListener(`click`, this.onClick);
+  };
 };

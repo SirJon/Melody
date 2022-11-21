@@ -1,12 +1,34 @@
 import songs from './songs.js';
 
-// @TODO: Возможно лишнее и эти значения можно брать из currentPlayer
-const InitialState = {
-  TIME: 5, // минуты
-  NOTES: 3
+export const GameSettings = {
+  MAX_GAME_TIME: 300, // секунды
+  MAX_QUICK_ANSWER_TIME: 30, // секунды
+  MIN_TIMER_DANGER_ZONE: 30, // секунды
+  MAX_COUNT_NOTES: 3,
+  MAX_COUNT_MISTAKES: 3,
+  MAX_COUNT_ANSWERS: 10,
+  MAX_COUNT_LEVELS: 10
 };
 
-const questions = [
+export const initialState = {
+  timer: null,
+  mistakes: 0,
+  level: 0,
+  get time() {
+    if (this.timer === null) {
+      return GameSettings.MAX_GAME_TIME;
+    }
+
+    return this.timer.seconds;
+  },
+  resetToDefault() {
+    this.timer = null;
+    this.mistakes = 0;
+    this.level = 0;
+  }
+};
+
+export const questions = [
   {
     type: `artist`,
     title: `Кто исполняет эту песню?`,
@@ -74,13 +96,20 @@ const questions = [
   }
 ];
 
-const currentPlayer = {
+export const currentPlayer = {
   score: 0,
-  remainingTime: 300,
-  remainingNotes: 3,
-  currentLevel: 0,
-  remainingLevels: 10,
-  answers: [] // массив объектов, каждый объект содержит ключ correctly с значением true или false и ключ time с числовым значением в секундах (для работы с getPlayerScore)
+  remainingTime: initialState.time,
+  remainingNotes: GameSettings.MAX_COUNT_NOTES - initialState.mistakes,
+  answers: [], // массив объектов, каждый объект содержит ключ correctly с значением true или false и ключ time с числовым значением в секундах
+  get spentTime() {
+    return GameSettings.MAX_GAME_TIME - initialState.time;
+  },
+  resetToDefault() {
+    this.score = 0;
+    this.remainingTime = initialState.time;
+    this.remainingNotes = GameSettings.MAX_COUNT_NOTES - initialState.mistakes;
+    this.answers = [];
+  }
 };
 
-const playersStats = [4, 5, 8, 10, 11, 15, 19];
+export const playersStats = [4, 5, 8, 10, 11, 15, 19];

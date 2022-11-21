@@ -1,10 +1,12 @@
-import { getNode, showScreen, getRandomValue } from "../../utils";
-import { screenResultWin, initScreenResultWin } from "./result-win";
-import { screenResultAttemptsEnd, initScreenResultAttemptsEnd } from "./result-attempts-end";
-import { screenResulTimeOver, initScreenResultTimeOver } from "./result-time-over";
+import AbstractView from "../../../AbstractView";
+export default class LevelArtistView extends AbstractView {
+  constructor(level) {
+    super();
+    this.level = level;
+  };
 
-export const screenLevelArtist = getNode(
-  `<section class="main main--level main--level-artist js-main">
+  get template() {
+    return `<section class="main main--level main--level-artist js-main">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle cx="390" cy="390" r="370" class="timer-line"
         style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"></circle>
@@ -61,31 +63,16 @@ export const screenLevelArtist = getNode(
       </form>
     </div>
   </section>`
-);
-
-const levelResult = (e) => {
-  e.preventDefault();
-  const screen = getRandomValue(1, 3);
-  switch (screen) {
-    case 1:
-      showScreen(screenResultWin);
-      initScreenResultWin();
-      break;
-    case 2:
-      showScreen(screenResultAttemptsEnd);
-      initScreenResultAttemptsEnd();
-      break;
-    case 3:
-      showScreen(screenResulTimeOver);
-      initScreenResultTimeOver();
-      break;
   };
-};
 
-export const initScreenLevelArtist = () => {
-  const levelArtistInputs = [...document.querySelectorAll(`.js-main-answer`)];
-  levelArtistInputs.forEach(it => it.checked = false);
-  levelArtistInputs.forEach(it => {
-    it.addEventListener(`change`, levelResult)
-  });
+  onClick(){
+  };
+
+  bind() {
+    const levelArtistInputs = [...this.element.querySelectorAll(`.js-main-answer`)];
+    levelArtistInputs.forEach(it => it.checked = false);
+    levelArtistInputs.forEach(it => {
+      it.addEventListener(`change`, this.onClick)
+    });
+  };
 };

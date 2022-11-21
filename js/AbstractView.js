@@ -1,6 +1,9 @@
 import {getNode} from "./utils";
 export default class AbstractView {
   constructor() {
+    if (new.target === AbstractView) {
+      throw new Error(`Can't instantiate AbstractView`);
+    }
   }
 
   get template(){
@@ -8,7 +11,7 @@ export default class AbstractView {
   }
 
   render() {
-    getNode(this.template);
+    return getNode(this.template);
   }
 
   bind(){
@@ -19,8 +22,7 @@ export default class AbstractView {
     if (!this._element) {
       this._element = this.render();
       this.bind();
-    }
-
+    };
     return this._element;
   }
 };
