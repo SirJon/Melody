@@ -1,6 +1,6 @@
 import { getRandomValue, showScreen } from "./utils";
-import { WelcomView } from "./templates/screens/welcome/welcome-view";
-import { LevelGenreView } from "./templates/screens/level-genre/level-genre-view";
+import WelcomView from "./templates/screens/welcome/welcome-view";
+import LevelGenreView from "./templates/screens/level-genre/level-genre-view";
 import { initScreenLevelArtist, screenLevelArtist } from "./templates/screens/level-artist";
 import LevelArtistView from "./templates/screens/level-artist/level-artist-view";
 import { initScreenResultWin, screenResultWin } from "./templates/screens/result-win";
@@ -9,13 +9,13 @@ import { initScreenResultTimeOver, screenResulTimeOver } from "./templates/scree
 import ResultWin from "./templates/screens/result/resilt-win-view";
 import ResultFalse from "./templates/screens/result/result-false-view";
 
-// const welcomView = new WelcomView;
-// const levelGenreView = new LevelGenreView;
+const welcomView = new WelcomView;
+const levelGenreView = new LevelGenreView;
 const levelArtistView =  new LevelArtistView;
 // showScreen(screenResultWin);
 
 const result = new ResultFalse;
-showScreen(result.element);
+showScreen(levelGenreView.element);
 
 // welcomView.onClick = () => {
 //   showScreen(levelGenreView.element);
