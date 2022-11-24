@@ -1,5 +1,21 @@
 import AbstractView from "../../../AbstractView";
 import { logoTemplate } from "../components-templates";
+
+const startButtonTemplate = `<button class="main-play js-main-start">Начать игру</button>`;
+const infoTemplate = `
+<h2 class="title main-title">Правила игры</h2>
+<p class="text main-text">
+  Правила просты — за 5 минут ответить на все вопросы.<br>
+  Ошибиться можно 3 раза.<br>
+  Удачи!
+</p>`.trim();
+const screenWelcomeTemplate = `
+<section class="main main--welcome js-main">
+  ${logoTemplate}
+  ${startButtonTemplate}
+  ${infoTemplate}
+</section>`.trim();
+
 export default class WelcomView extends AbstractView {
   constructor(level) {
     super();
@@ -7,23 +23,14 @@ export default class WelcomView extends AbstractView {
   };
 
   get template() {
-    return `<section class="main main--welcome js-main">
-              ${logoTemplate}
-              <button class="main-play js-main-play">Начать игру</button>
-              <h2 class="title main-title">Правила игры</h2>
-              <p class="text main-text">
-                Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.<br>
-                Ошибиться можно 3 раза.<br>
-                Удачи!
-              </p>
-            </section>`
+    return screenWelcomeTemplate;
   };
 
   onClick(){
   };
 
   bind() {
-    const playButton = this.element.querySelector(`.js-main-play`);
+    const playButton = this.element.querySelector(`.js-main-start`);
     playButton.addEventListener(`click`, this.onClick);
   };
 };
