@@ -7,5 +7,3 @@ export const getMistakesTemplate = (state) => {
             ${new Array(state.mistakes).fill(`<img class="main-mistake" src="img/wrong-answer.png" width="35" height="49">`).join(``)}
           </div>`;
 };
-
-export const answerSendButtonTemplate = `<button class="genre-answer-send js-genre-answer-send" type="submit" disabled>Ответить</button>`;

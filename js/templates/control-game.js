@@ -1,15 +1,20 @@
+import { GameSettings, questions, currentPlayer, playersStats } from "../data/game";
 import {createGameTimer, startGameTimer} from "../data/game-timer";
+import showScreen from "../utils/show-screen";
+import getScreenLevelGenre from "./screens/level-genre/level-genre";
+
 let gameTimer;
 
 // В зависимости от типа вопроса показываем один из двух типов игровых экранов
-const checkQuestionType = (state, question, player) => {
+const checkQuestionType = (state, question) => {
   if (question.type === `artist`) {
-    showScreen(getScreenLevelArtist(state, question, player));
+    // showScreen(getScreenLevelArtist(state, question));
+    console.log(`artist`);
     return;
   }
 
   if (question.type === `genre`) {
-    showScreen(getScreenLevelGenre(state, question, player));
+    showScreen(getScreenLevelGenre(state, question));
   }
 };
 
@@ -26,7 +31,8 @@ const controlGame = (state) => {
   // Если кончилось время или игрок совершил максимально возможное количество ошибок
   if (state.time === 0 || state.mistakes > GameSettings.MAX_COUNT_MISTAKES) {
     clearInterval(gameTimer);
-    showScreen(getScreenFailResult(state));
+    // showScreen(getScreenFailResult(state));
+    console.log(`совершил максимально возможное количество ошибок`);
     initReplay();
     return;
   }
@@ -41,7 +47,8 @@ const controlGame = (state) => {
   // Если игрок прошел все уровни
   if (state.level === GameSettings.MAX_COUNT_LEVELS) {
     clearInterval(gameTimer);
-    showScreen(getScreenWinResult(GameSettings.MAX_QUICK_ANSWER_TIME, state, currentPlayer, playersStats));
+    // showScreen(getScreenWinResult(GameSettings.MAX_QUICK_ANSWER_TIME, state, currentPlayer, playersStats));
+    console.log(`Прошёл все уровни`);
     initReplay();
   }
 };

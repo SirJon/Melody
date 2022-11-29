@@ -28,74 +28,6 @@ export const initialState = {
   }
 };
 
-export const questions = [
-  {
-    type: `artist`,
-    title: `Кто исполняет эту песню?`,
-    song: songs[1].src,
-    answerList: [songs[0], songs[1], songs[2]],
-    correctAnswer: songs[1].artist
-  },
-  {
-    type: `genre`,
-    title: `Выберите кантри треки`,
-    answerList: [songs[2], songs[3], songs[4], songs[5]],
-    correctAnswer: songs[2]
-  },
-  {
-    type: `artist`,
-    title: `Кто исполняет эту песню?`,
-    song: songs[0].src,
-    answerList: [songs[0], songs[1], songs[2]],
-    correctAnswer: songs[0].artist
-  },
-  {
-    type: `genre`,
-    title: `Выберите поп треки`,
-    answerList: [songs[2], songs[3], songs[4], songs[5]],
-    correctAnswer: songs[4]
-  },
-  {
-    type: `artist`,
-    title: `Кто исполняет эту песню?`,
-    song: songs[2].src,
-    answerList: [songs[0], songs[1], songs[2]],
-    correctAnswer: songs[2].artist
-  },
-  {
-    type: `genre`,
-    title: `Выберите электронные треки`,
-    answerList: [songs[2], songs[3], songs[4], songs[5]],
-    correctAnswer: songs[5]
-  },
-  {
-    type: `artist`,
-    title: `Кто исполняет эту песню?`,
-    song: songs[5].src,
-    answerList: [songs[3], songs[4], songs[5]],
-    correctAnswer: songs[5].artist
-  },
-  {
-    type: `genre`,
-    title: `Выберите джаз треки`,
-    answerList: [songs[0], songs[1], songs[2], songs[3]],
-    correctAnswer: songs[0]
-  },
-  {
-    type: `artist`,
-    title: `Кто исполняет эту песню?`,
-    song: songs[4].src,
-    answerList: [songs[3], songs[4], songs[5]],
-    correctAnswer: songs[4].artist
-  },
-  {
-    type: `genre`,
-    title: `Выберите рок треки`,
-    answerList: [songs[0], songs[1], songs[2], songs[3]],
-    correctAnswer: songs[1]
-  }
-];
-
 export const currentPlayer = {
   score: 0,
   remainingTime: initialState.time,
@@ -113,3 +45,86 @@ export const currentPlayer = {
 };
 
 export const playersStats = [4, 5, 8, 10, 11, 15, 19];
+
+export const questions = [
+  {
+    "type": "genre",
+    "question": "Выберите все песни в жанре R'n'B",
+    "genre": "rnb",
+    "answers": [
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rnb"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "blues"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rock"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rnb"
+      }
+    ]
+  },
+  {
+    "type": "genre",
+    "question": "Выберите все блюзовые песни",
+    "genre": "blues",
+    "answers": [
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "blues"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "pop"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rock"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rnb"
+      }
+    ]
+  },
+  {
+    "type": "artist",
+    "question": "Кто исполняет эту песню?",
+    "src": "path/to/file.mp3",
+    "answers": [
+      {
+        "image": {
+          "url": "http://placehold.it/705x455",
+          "width": 300,
+          "height": 300
+        },
+        "title": "Пелагея",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "http://placehold.it/705x455",
+          "width": 300,
+          "height": 300
+        },
+        "title": "Краснознамённая дивизия имени моей Бабушки",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "http://placehold.it/705x455",
+          "width": 300,
+          "height": 300
+        },
+        "title": "Кровосток",
+        "isCorrect": true
+      }
+    ]
+  }
+];
