@@ -1,10 +1,10 @@
 import { GameSettings, questions, currentPlayer, playersStats } from "../data/game";
 import {createGameTimer, startGameTimer} from "../data/game-timer";
 import showScreen from "../utils/show-screen";
+import initReplay from "./initreplay";
 import getScreenLevelArtist from "./screens/level-artist/level-artist";
 import getScreenLevelGenre from "./screens/level-genre/level-genre";
 import getScreenResultWin from "./screens/result/result-win";
-
 let gameTimer;
 
 // В зависимости от типа вопроса показываем один из двух типов игровых экранов
@@ -35,7 +35,6 @@ const controlGame = (state) => {
     clearInterval(gameTimer);
     // showScreen(getScreenFailResult(state));
     console.log(`совершил максимально возможное количество ошибок`);
-    // initReplay();
     return;
   }
 
@@ -51,7 +50,6 @@ const controlGame = (state) => {
     clearInterval(gameTimer);
     // showScreen(getScreenWinResult(GameSettings.MAX_QUICK_ANSWER_TIME, state, currentPlayer, playersStats));
     showScreen(getScreenResultWin());
-    // initReplay();
   }
 };
 

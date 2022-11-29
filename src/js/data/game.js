@@ -24,97 +24,97 @@ export const questions = [
       }
     ]
   },
-  // {
-  //   "type": "artist",
-  //   "question": "Кто исполняет эту песню?",
-  //   "src": "path/to/file.mp3",
-  //   "answers": [
-  //     {
-  //       "image": {
-  //         "url": "https://placekitten.com/705/455",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Пелагея",
-  //       "isCorrect": false
-  //     },
-  //     {
-  //       "image": {
-  //         "url": "https://www.placecage.com/705/455",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Краснознамённая дивизия имени моей Бабушки",
-  //       "isCorrect": false
-  //     },
-  //     {
-  //       "image": {
-  //         "url": "https://placekitten.com/705/456",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Кровосток",
-  //       "isCorrect": true
-  //     }
-  //   ]
-  // },
-  // {
-  //   "type": "genre",
-  //   "question": "Выберите все блюзовые песни",
-  //   "genre": "blues",
-  //   "answers": [
-  //     {
-  //       "src": "/path/to/file.mp3",
-  //       "genre": "blues"
-  //     },
-  //     {
-  //       "src": "/path/to/file.mp3",
-  //       "genre": "pop"
-  //     },
-  //     {
-  //       "src": "/path/to/file.mp3",
-  //       "genre": "rock"
-  //     },
-  //     {
-  //       "src": "/path/to/file.mp3",
-  //       "genre": "rnb"
-  //     }
-  //   ]
-  // },
-  // {
-  //   "type": "artist",
-  //   "question": "Кто исполняет эту песню?",
-  //   "src": "path/to/file.mp3",
-  //   "answers": [
-  //     {
-  //       "image": {
-  //         "url": "https://placekitten.com/704/455",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Цой",
-  //       "isCorrect": false
-  //     },
-  //     {
-  //       "image": {
-  //         "url": "https://placekitten.com/700/455",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Луна",
-  //       "isCorrect": false
-  //     },
-  //     {
-  //       "image": {
-  //         "url": "https://placekitten.com/702/455",
-  //         "width": 134,
-  //         "height": 134
-  //       },
-  //       "title": "Matrang",
-  //       "isCorrect": true
-  //     }
-  //   ]
-  // },
+  {
+    "type": "artist",
+    "question": "Кто исполняет эту песню?",
+    "src": "path/to/file.mp3",
+    "answers": [
+      {
+        "image": {
+          "url": "https://placekitten.com/705/455",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Пелагея",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "https://www.placecage.com/705/455",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Краснознамённая дивизия имени моей Бабушки",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "https://placekitten.com/705/456",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Кровосток",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "type": "genre",
+    "question": "Выберите все блюзовые песни",
+    "genre": "blues",
+    "answers": [
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "blues"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "pop"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rock"
+      },
+      {
+        "src": "/path/to/file.mp3",
+        "genre": "rnb"
+      }
+    ]
+  },
+  {
+    "type": "artist",
+    "question": "Кто исполняет эту песню?",
+    "src": "path/to/file.mp3",
+    "answers": [
+      {
+        "image": {
+          "url": "https://placekitten.com/704/455",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Цой",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "https://placekitten.com/700/455",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Луна",
+        "isCorrect": false
+      },
+      {
+        "image": {
+          "url": "https://placekitten.com/702/455",
+          "width": 134,
+          "height": 134
+        },
+        "title": "Matrang",
+        "isCorrect": true
+      }
+    ]
+  },
 ];
 
 export const GameSettings = {
