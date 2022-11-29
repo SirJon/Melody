@@ -4,37 +4,27 @@
   "private": true,
   "description": "Личный проект «Угадай мелодию» от HTML Academy",
   "scripts": {
-    "eslint": "eslint js/",
-    "build": "gulp build",
-    "start": "gulp serve",
-    "test": "gulp test"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "serve": "cross-env NODE_ENV=development webpack serve --mode development --progress --hot --open",
+    "start": "npm run serve"
   },
   "devDependencies": {
-    "autoprefixer": "6.7.7",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
-    "babel-register": "6.26.0",
-    "browser-sync": "2.18.8",
-    "css-mqpacker": "6.0.0",
-    "del": "2.2.2",
-    "eslint": "4.2.0",
-    "eslint-config-htmlacademy": "0.3.x",
-    "gulp": "3.9.1",
-    "gulp-better-rollup": "1.1.1",
-    "gulp-csso": "3.0.0",
-    "gulp-imagemin": "3.2.0",
-    "gulp-mocha": "4.3.1",
-    "gulp-plumber": "1.1.0",
-    "gulp-postcss": "7.0.0",
-    "gulp-rename": "1.2.2",
-    "gulp-sass": "3.1.0",
-    "gulp-sourcemaps": "2.6.1"
-  },
-  "engines": {
-    "node": "6.11.3"
-  },
-  "babel": {
-    "plugins": [
-      "transform-es2015-modules-commonjs"
-    ]
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^8.0.0",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
   }
 }
