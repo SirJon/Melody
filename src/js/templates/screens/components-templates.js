@@ -1,4 +1,4 @@
-export const logoTemplate = `<section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>`;
+export const logoTemplate = `<section class="logo js-logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>`;
 
 export const replayButtonTemplate = `<span role="button" tabindex="0" class="main-replay js-main-replay">Сыграть ещё раз</span>`;
 

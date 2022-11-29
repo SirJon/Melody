@@ -3,6 +3,7 @@ import {createGameTimer, startGameTimer} from "../data/game-timer";
 import showScreen from "../utils/show-screen";
 import getScreenLevelArtist from "./screens/level-artist/level-artist";
 import getScreenLevelGenre from "./screens/level-genre/level-genre";
+import getScreenResultWin from "./screens/result/result-win";
 
 let gameTimer;
 
@@ -49,7 +50,7 @@ const controlGame = (state) => {
   if (state.level === GameSettings.MAX_COUNT_LEVELS) {
     clearInterval(gameTimer);
     // showScreen(getScreenWinResult(GameSettings.MAX_QUICK_ANSWER_TIME, state, currentPlayer, playersStats));
-    console.log(`Прошёл все уровни`);
+    showScreen(getScreenResultWin());
     // initReplay();
   }
 };

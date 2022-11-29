@@ -17,9 +17,8 @@ const screenWelcomeTemplate = `
 </section>`.trim();
 
 export default class WelcomView extends AbstractView {
-  constructor(level) {
+  constructor() {
     super();
-    this.level = level;
   };
 
   get template() {
