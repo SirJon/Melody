@@ -6,7 +6,6 @@ const getScreenLevelArtist = (state, question) => {
 
   screenLevelArtist.onClick = () => {
     controlGame(state);
-    // console.log(`change`)
   };
 
   return screenLevelArtist.element;

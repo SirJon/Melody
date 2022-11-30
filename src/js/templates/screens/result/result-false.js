@@ -3,22 +3,22 @@ import showScreen from "../../../utils/show-screen";
 import controlGame from "../../control-game";
 import resetState from "../../resetState";
 import getScreenWelcome from "../welcome/welcome";
-import ResultWin from "./resilt-win-view";
+import ResultFalse from "./result-false-view";
 
-const getScreenResultWin = (playersStats, currentPlayer) => {
-  const screenResultWin = new ResultWin(playersStats, currentPlayer);
+const getScreenResultFalse = (state, question) => {
+  const screenResultFalse = new ResultFalse(state, question);
 
-  screenResultWin.onClick = () => {
+  screenResultFalse.onClick = () => {
     resetState();
     controlGame(initialState);
   };
 
-  screenResultWin.onLogo = () => {
+  screenResultFalse.onLogo = () => {
     resetState();
     showScreen(getScreenWelcome(initialState));
   };
 
-  return screenResultWin.element;
+  return screenResultFalse.element;
 };
 
-export default getScreenResultWin;
+export default getScreenResultFalse;

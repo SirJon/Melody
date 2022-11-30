@@ -8,9 +8,9 @@ class TimerView {
               </circle>
 
               <div class="timer-value js-timer-value" xmlns="http://www.w3.org/1999/xhtml">
-                <span class="timer-value-mins js-timer-value-mins">00</span><!--
-                --><span class="timer-value-dots js-timer-value-dots">:</span><!--
-                --><span class="timer-value-secs js-timer-value-secs">00</span>
+                <span class="timer-value-mins js-timer-value-mins">05</span>
+                <span class="timer-value-dots js-timer-value-dots">:</span>
+                <span class="timer-value-secs js-timer-value-secs">00</span>
               </div>
             </svg>`;
   }

@@ -1,4 +1,4 @@
-import songs from './songs.js';
+import { gamePlayerPointsScored } from "./game-player-points-scored";
 
 export const questions = [
   {
@@ -127,7 +127,7 @@ export const GameSettings = {
 };
 
 export const initialState = {
-  timer: null,
+  timer: 0,
   mistakes: 0,
   level: 0,
   get time() {
@@ -147,17 +147,22 @@ export const initialState = {
 export const currentPlayer = {
   score: 0,
   remainingTime: initialState.time,
-  remainingNotes: GameSettings.MAX_COUNT_NOTES - initialState.mistakes,
+  remainingNotes: initialState.mistakes,
   answers: [], // массив объектов, каждый объект содержит ключ correctly с значением true или false и ключ time с числовым значением в секундах
   get spentTime() {
     return GameSettings.MAX_GAME_TIME - initialState.time;
   },
   resetToDefault() {
     this.score = 0;
-    this.remainingTime = initialState.time;
-    this.remainingNotes = GameSettings.MAX_COUNT_NOTES - initialState.mistakes;
+    this.remainingTime = GameSettings.MAX_GAME_TIME - initialState.time;
+    this.remainingNotes = initialState.mistakes;
     this.answers = [];
-  }
+  },
+  getResult() {
+    this.score = gamePlayerPointsScored(this.answers, initialState.mistakes, GameSettings.MAX_QUICK_ANSWER_TIME, GameSettings.MAX_COUNT_MISTAKES);
+    this.remainingTime = GameSettings.MAX_GAME_TIME - initialState.time;
+    this.remainingNotes = initialState.mistakes;
+  },
 };
 
-export const playersStats = [4, 5, 8, 10, 11, 15, 19];
+export const playersStats = [1, 2, 3, 5];

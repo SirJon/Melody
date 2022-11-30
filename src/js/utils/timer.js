@@ -7,7 +7,6 @@ class Timer {
     if (this.seconds <= 0) {
       return -1;
     }
-
     return --this.seconds;
   }
 }
