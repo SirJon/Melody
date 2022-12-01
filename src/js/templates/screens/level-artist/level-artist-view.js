@@ -28,10 +28,10 @@ const getArtistAnswerTemplate = (index, imgSrc, imgWidth, imgHeight, title) => {
           </div>`;
 };
 
-const getScreenLevelArtistTemplate = (state, question) => {
+const getScreenLevelArtistTemplate = (GameSettings, state, question) => {
   return (`<section class="main main--level main--level-artist js-main">
             ${new TimerView().template}
-            ${getMistakesTemplate(state)}
+            ${getMistakesTemplate(GameSettings, state)}
             <div class="main-wrap">
               ${getTitleTemplate(question.question)}
               ${getPlayerWrapperTemplate(question.src)}
@@ -46,14 +46,15 @@ const getScreenLevelArtistTemplate = (state, question) => {
 }
 
 export default class LevelArtistView extends AbstractView {
-  constructor(state, question) {
+  constructor(GameSettings, state, question) {
     super();
+    this.GameSettings = GameSettings;
     this.state = state;
     this.question = question;
   }
 
   get template() {
-    return getScreenLevelArtistTemplate(this.state, this.question);
+    return getScreenLevelArtistTemplate(this.GameSettings, this.state, this.question);
   };
 
   onClick() {

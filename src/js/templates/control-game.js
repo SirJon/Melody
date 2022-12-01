@@ -8,15 +8,14 @@ import getScreenResultWin from "./screens/result/result-win";
 let gameTimer;
 
 // В зависимости от типа вопроса показываем один из двух типов игровых экранов
-const checkQuestionType = (state, question) => {
-  console.log(state)
+const checkQuestionType = (GameSettings, state, question) => {
   if (question.type === `artist`) {
-    showScreen(getScreenLevelArtist(state, question));
+    showScreen(getScreenLevelArtist(GameSettings, state, question));
     return;
   }
 
   if (question.type === `genre`) {
-    showScreen(getScreenLevelGenre(state, question));
+    showScreen(getScreenLevelGenre(GameSettings, state, question));
     return;
   }
 };
@@ -42,7 +41,7 @@ const controlGame = (state) => {
   // Если игрок в процессе игры
   if (state.level < GameSettings.MAX_COUNT_LEVELS) {
     currentPlayer.getResult();
-    checkQuestionType(state, questions[state.level], currentPlayer);
+    checkQuestionType(GameSettings, state, questions[state.level], currentPlayer);
     currentPlayer.answers.push({
       correctly: true,
       time: 31,

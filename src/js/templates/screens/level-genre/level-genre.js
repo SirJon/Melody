@@ -1,8 +1,8 @@
 import controlGame from "../../control-game";
 import LevelGenreView from "./level-genre-view";
 
-const getScreenLevelGenre = (state, questions) => {
-  const screenLevelGenre = new LevelGenreView(state, questions);
+const getScreenLevelGenre = (GameSettings, state, questions) => {
+  const screenLevelGenre = new LevelGenreView(GameSettings, state, questions);
 
   screenLevelGenre.onClick = () => {
     controlGame(state);

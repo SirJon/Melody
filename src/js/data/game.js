@@ -127,7 +127,7 @@ export const GameSettings = {
 };
 
 export const initialState = {
-  timer: 0,
+  timer: null,
   mistakes: 0,
   level: 0,
   get time() {

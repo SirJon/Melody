@@ -28,10 +28,10 @@ const getGenreAnswerTemplate = (answerNumber, songName, songSrc) => {
           </div>`;
 };
 
-const getScreenLevelGenreTemplate = (state, question) => {
+const getScreenLevelGenreTemplate = (GameSettings, state, question) => {
   return `<section class="main main--level main--level-genre js-main">
             ${new TimerView().template}
-            ${getMistakesTemplate(state)}
+            ${getMistakesTemplate(GameSettings, state)}
             <div class="main-wrap">
               ${getTitleTemplate(question.question)}
                <form class="genre js-genre">
@@ -45,14 +45,15 @@ const getScreenLevelGenreTemplate = (state, question) => {
 };
 
 export default class LevelGenreView extends AbstractView {
-  constructor(state, question) {
+  constructor(GameSettings, state, question) {
     super();
+    this.GameSettings = GameSettings;
     this.state = state;
     this.question = question;
   }
 
   get template() {
-    return getScreenLevelGenreTemplate(this.state, this.question);
+    return getScreenLevelGenreTemplate(this.GameSettings, this.state, this.question);
   };
 
   onClick() {
