@@ -6,7 +6,3 @@ export const getNode = (string) => {
 
   return node.firstChild;
 };
-
-export const getRandomValue = (min, max) => {
-  return Math.floor(Math.random() * (max - min) + min);
-}

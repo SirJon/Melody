@@ -31,7 +31,7 @@ const controlGame = (state) => {
   }
 
   // Если кончилось время или игрок совершил максимально возможное количество ошибок
-  if (state.time === 0 || state.mistakes > GameSettings.MAX_COUNT_MISTAKES) {
+  if (state.time === 0 || state.mistakes === GameSettings.MAX_COUNT_MISTAKES) {
     clearInterval(gameTimer);
     showScreen(getScreenResultFalse(state));
     console.log(`кончилось время или совершил максимально возможное количество ошибок`);
