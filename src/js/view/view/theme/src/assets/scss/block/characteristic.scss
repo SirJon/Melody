@@ -1,0 +1,219 @@
+.characteristic{
+  position: relative;
+
+  margin: 0 auto;
+  padding: 0 $mobile-padding;
+  box-sizing: border-box;
+  min-width: $mobile-width-min;
+  background: $gradient-background;
+  @media (min-width: $mobile-width-mid){
+    padding: 0 $table-padding;
+  }
+  @media (min-width: $desktop-width-min){
+    padding: 0 $desktop-padding-min;
+    background: none;
+  }
+}
+
+.characteristic__description{
+  position: relative;
+  margin-bottom: 105px;
+  @media (min-width: $table-width-min){
+    margin-bottom: 150px;
+  }
+  @media (min-width: $desktop-width-min){
+    align-items: end;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 21px;
+    grid-template-areas: 
+      "carousel carousel carousel . title title title ."
+      "carousel carousel carousel . model model model ."
+      "carousel carousel carousel . list list list ."
+      "carousel carousel carousel . equipment equipment equipment .";
+    margin-bottom: 180px;
+  }
+  @media (min-width: $desktop-width-mid){
+    margin-bottom: 208px;
+  }
+  @media (min-width: $desktop-width-max){
+    margin-bottom: 260px;
+  }
+}
+
+.characteristic__equipment{
+  @media (min-width: $desktop-width-min){
+    grid-area: equipment;
+  }
+}
+
+.characteristic__slider{
+  margin: 70px auto 80px;
+}
+
+.characteristic__model{
+  display: flex;
+  align-items: center;
+  margin: 21px 0 28px;
+  gap: 60px;
+  @media (min-width: $table-width-min){
+    margin: 16px 0 32px;
+    gap: 96px;
+  }
+  @media (min-width: $desktop-width-min){
+    grid-area: model;
+  }
+  
+  @media (min-width: $desktop-width-max){
+    margin: 20px 0 40px;
+    gap: 120px;
+  }
+}
+
+.characteristic__carousel{
+  display: flex;
+  margin: 0 auto 80px;
+  justify-content: center;
+  @media (min-width: $mobile-width-mid){
+    margin-bottom: 96px;
+  }
+  @media (min-width: $desktop-width-min){
+    grid-area: carousel;
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
+
+.characteristic__products{
+  @media (max-width: $table-width-max){
+    display: none;
+  }
+  @media (min-width: $desktop-width-min){
+    position: absolute;
+    top: 180px;
+    right: 30px;
+  }
+}
+
+.characteristic__span--title{
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+  @media (min-width: $table-width-min){
+    font-size: 16px;
+    line-height: 25px;
+  }  
+  @media (min-width: $desktop-width-min){
+    grid-area: title;    
+    font-size: 14px;
+    line-height: 22px;
+  }
+  @media (min-width: $desktop-width-mid){
+    font-size: 16px;
+    line-height: 25px;
+  }  
+  @media (min-width: $desktop-width-max){
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.characteristic__span--model{
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 49px;
+  @media (min-width: $table-width-min){
+    font-size: 48px;
+    line-height: 56px;
+  }
+  @media (min-width: $desktop-width-min){
+    font-size: 42px;
+    line-height: 49px;
+  }
+  @media (min-width: $desktop-width-mid){
+    font-size: 48px;
+    line-height: 56px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+.characteristic__button{
+  border: 1px solid $green;
+  border-radius: 27px;
+  padding: 10px 13px;
+  font-size: 10px;
+  line-height: 14px;
+  @media (min-width: $table-width-min){
+    padding: 11px 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.characteristic__list{
+  margin: 0 0 70px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  @media (min-width: $table-width-min){
+    gap: 13px;
+  }  
+  @media (min-width: $desktop-width-min){
+    grid-area: list;
+    margin-bottom: 56px;
+  }
+  @media (min-width: $desktop-width-max){
+    margin-bottom: 70px;
+  }
+}
+
+.characteristic__span--key{
+  font-size: 12px;
+  line-height: 16px;
+  color: $white-70;
+  @media (min-width: $table-width-min){
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media (min-width: $desktop-width-min){
+    font-size: 12px;
+    line-height: 16px;
+  }
+  @media (min-width: $desktop-width-mid){
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.characteristic__span--value{
+  font-weight: 500;
+  @media (min-width: $table-width-min){
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (min-width: $desktop-width-min){    
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @media (min-width: $desktop-width-mid){
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 20px;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,232 @@
+.catalog {
+  padding: 50px $padding;
+  box-sizing: border-box;
+  @media (min-width: $mobile-width-mid){
+    padding: 50px $padding-big;
+  }
+}
+
+.catalog__title {
+  margin: 0 0 35px;
+}
+
+.catalog__subtitle {
+  margin: 0 0 21px;
+  padding: 0;
+  @include Subtitle2For14;
+
+  @media (min-width: $desktop-width-min) {
+    margin-bottom: 42px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    margin-bottom: 55px;
+    @include Subtitle2For18;
+  }
+}
+
+.catalog__block {
+  margin: 75px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $table-width-min) {
+    margin: 80px 0;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    margin: 115px 0 160px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    margin: 180px 0;
+  }
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 56px;
+}
+
+.catalog__item {
+  @include CategoryFor14;
+  cursor: pointer;
+
+  @media (min-width: $table-width-min) {
+    @include CategoryFor16;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    @include CategoryFor18;
+  }
+}
+
+.catalog__item--activ {
+  @include CategoryFocusFor14;
+  padding-bottom: 3px;
+  border-bottom: 2px solid $green-main;
+
+  @media (min-width: $table-width-min) {
+    @include CategoryFocusFor16;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    @include CategoryFocusFor18;
+  }
+}
+
+.catalog__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.catalog__wrapper--products {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 21px 7px;
+  justify-content: space-around;
+
+  @media (min-width: $mobile-width-mid) {
+    grid-template-columns: repeat(3, 150px);
+  }
+
+  @media (min-width: $table-width-min) {
+    grid-template-columns: repeat(3, 168px);
+    gap: 24px 8px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 65px 21px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    grid-template-columns: repeat(4, 1fr)
+  }
+}
+
+.catalog__product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  width: 100%;
+  height: 175px;
+  padding-bottom: 18px;
+
+  background: linear-gradient(-195deg, $gray-light 55%, #D3DEDF 55%);
+  position: relative;
+
+  cursor: pointer;
+
+  @media (max-width: calc($mobile-width-mid - 1px)) {
+    &:nth-child(2n) {
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: $mobile-width-mid) and (max-width: $table-width-max) {
+    &:nth-child(3n + 2) {
+      justify-self: center;
+    }
+
+    &:nth-child(3n + 3) {
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: $table-width-min) {
+    height: 210px;
+    padding-bottom: 19px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    height: 230px;
+    width: 196px;
+    padding-bottom: 25px;
+
+    &:hover,
+    &:focus {
+      .catalog__img {
+        width: 99%;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width-max) {
+    min-height: 400px;
+    width: 333px;
+  }
+}
+
+.сatalog__product--spice {
+  background: $gray-light;
+}
+
+.сatalog__product--oil {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-color: $white;
+    top: 0;
+    left: 0;
+  }
+}
+
+.catalog__img {
+  z-index: 1;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: auto;
+  @media (min-width: $desktop-width-min){
+    width: 90%;
+  }
+}
+
+.catalog__name {
+  @include CategoryFocusFor14;
+
+  @media (min-width: $table-width-min) {
+    @include CategoryFocusFor16;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    @include CategoryFocusFor14;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    @include CategoryFocusFor18;
+  }
+}
+
+.catalog__description {
+  width: 80%;
+  text-align: center;
+  @include CaptionCardsFor14;
+
+  @media (min-width: $table-width-min) {
+    @include BodyFor14;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    @include CaptionCardsFor14;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    @include BodyFor16;
+  }
+}

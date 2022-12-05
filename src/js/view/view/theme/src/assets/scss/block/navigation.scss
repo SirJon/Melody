@@ -1,0 +1,58 @@
+.navigation{
+  gap: 28px;
+  display: flex;
+  flex-direction: column;
+
+  
+  text-transform: uppercase;
+
+  position: relative;
+
+  @media (min-width: $table-width-min){
+    gap: 32px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @media (min-width: $desktop-width-min){
+    flex-direction: row;
+    margin: 0;
+    gap: 35px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  @media (min-width: $desktop-width-mid){    
+    font-size: 12px;
+    line-height: 18px;
+    gap: 48px;
+  }
+  @media (min-width: $desktop-width-max){    
+    font-size: 14px;
+    line-height: 20px;
+    gap: 60px;
+  }
+}
+
+.navigation__item{
+  width: max-content;
+  @media (min-width: $desktop-width-min){
+    &:hover,
+    &:focus{
+      color: $green-hover;
+    }
+  }
+}
+
+.navigation__item--activ{
+  border-bottom: 2px solid $green;
+}
+
+.navigation__item--desktop-show{
+  @media (max-width: $table-width-max){
+    display: none;
+  }
+}
+
+.navigation__link{
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,1 @@
+import changeLink from "./utils/changeLink/changeLink";

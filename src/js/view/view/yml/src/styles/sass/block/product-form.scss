@@ -1,0 +1,234 @@
+.product-form {
+  min-width: 360px;
+  margin-bottom: 100px;
+  padding-bottom: 20px;
+  background: linear-gradient(126.38deg, rgba(203, 216, 217, 0.3) -22.19%, rgba(203, 216, 217, 0.066) 101.87%);
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $desktop-width-min) {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0 21px;
+    padding: 100px $padding 150px;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    gap: 0 27px;
+  }
+}
+
+.product-form__description {
+  padding: 0 $padding;
+  margin: 0 0 120px;
+  z-index: 1;
+
+  @media (min-width: $mobile-width-mid) {
+    display: grid;
+    gap: 0 7px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: $desktop-width-min) {
+    gap: 0 21px;
+    margin: 0;
+    padding: 0;
+    grid-column: 1/5;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    gap: 0 27px;
+  }
+}
+
+.product-form__interactive {
+  z-index: 2;
+
+  @media (min-width: $mobile-width-mid) {
+    grid-column: 1/5;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    grid-column: 5/9;
+  }
+}
+
+.product-form__span--description {
+  @media (min-width: $mobile-width-mid) {
+    grid-column: 2/5;
+  }
+
+}
+
+.product-form__title {
+  font-family: 'Dela Gothic One', 'cursive';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: $gray;
+
+  padding-top: 130px;
+  margin: 0 0 50px;
+
+  display: grid;
+  gap: 0 7px;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (min-width: $mobile-width-mid) {
+    font-size: 70px;
+    line-height: 56px;
+    grid-column: 1/5;
+  }
+
+  @media (min-width: $table-width-min) {
+    font-size: 104px;
+    line-height: 104px;
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 98px;
+    line-height: 98px;
+    padding: 0;
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 135px;
+    line-height: 135px;
+    margin-bottom: 70px;
+  }
+}
+
+.product-form__title--start {
+  grid-column: 1/4;
+  position: relative;
+  display: flex;
+  width: max-content;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: $gray;
+    border-radius: 50%;
+    top: 50%;
+    right: -25px;
+
+    @media (min-width: $table-width-min) {
+      width: 16px;
+      height: 16px;
+      right: -30px;
+    }
+
+    @media (min-width: $desktop-width-min) {
+      width: 21px;
+      height: 21px;
+      right: -40px;
+    }
+
+    @media (min-width: $desktop-width-max){
+      width: 36px;
+      height: 36px;
+      right: -55px;
+    }
+  }
+}
+
+.product-form__title--end {
+  grid-column: 2/5;
+}
+
+.product-form__button {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  padding: 14px 0;
+  margin: 65px auto 0;
+
+  @media (max-width: calc(#{$mobile-width-mid} - 1px)) {
+    width: 300px;
+  }
+
+  @media (min-width: $mobile-width-mid) and (max-width: $mobile-width-max) {
+    width: 100%;
+    grid-column: 2/4;
+  }
+
+  @media (min-width: $table-width-min) {
+    margin-top: 100px;
+    width: 100%;
+    padding: 20px 0;
+    grid-column: 2/3;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    margin-top: 65px;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.product-form__svg--wave-top {
+  transform: rotate(180deg);
+  transition: 0.3s;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: min-content;
+}
+
+.product-form__svg--wave-bottom {
+  z-index: 3;
+}
+
+.product-form__span--background {
+  font-family: 'Dela Gothic One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 81px;
+  line-height: 92px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 10px;
+  left: $padding;
+  color: $white;
+
+  @media (min-width: $mobile-width-mid) {
+    bottom: 30px;
+  }
+
+  @media (min-width: $table-width-min) {
+    font-size: 112px;
+    line-height: 168px;
+    bottom: 10px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 168px;
+    line-height: 168px;
+    left: 120px;
+    bottom: 35px;
+  }
+}

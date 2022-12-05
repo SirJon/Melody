@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Alekseevskoe</title>
+</head>
+
+<body class="page__body">
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="main-nav main-nav--close">
+      <div class="main-nav__logo">
+        <a href="./index.html" class="main-nav__link main-nav__link--logo">
+          <div class="wrapper--svg" data-elLanguage="ru">
+            <svg class="main-nav__svg--logo main-nav__svg--logo-ru">
+              <use xlink:href=""></use>
+            </svg>
+          </div>
+          <div class="wrapper--svg" data-elLanguage="en">
+            <svg class="main-nav__svg--logo main-nav__svg--logo-en">
+              <use xlink:href=""></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+      <button class="main-nav__toggle button">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <ul class="main-nav__list main-nav__list--navigation menu--line">
+        <li class="main-nav__item" data-page="index"><a href="./index.html" class="main-nav__link" data-lang="index">Главная</a></li>
+        <li class="main-nav__item" data-page="catalog"><a href="./catalog.html" class="main-nav__link" data-lang="catalog">Каталог</a></li>
+        <li class="main-nav__item" data-page="delivery"><a href="./delivery.html" class="main-nav__link" data-lang="deliveryPayment">Доставка и оплата</a></li>
+        <li class="main-nav__item" data-page="contacts"><a href="./contacts.html" class="main-nav__link" data-lang="contacts">Контакты</a></li>
+        <li class="main-nav__item main-nav__item--desktop"><button class="main-nav__button button button--border"
+            type="button" data-lang="forPartner" data-elLanguage="en">Партнерам</button></li>
+      </ul>
+      <div class="main-nav__language language language--close menu--line">
+        <button class="button language__button" type="button">
+          <span class="language__span--select" data-lang="select">RU</span>
+          <svg class="language__svg--select">
+            <use xlink:href=""></use>
+          </svg>
+        </button>
+        <span class="language__span--title" data-lang="language">Язык</span>
+        <ul class="main-nav__list language__list">
+          <li class="language__item">
+            <input class="visually-hidden language__radio" type="radio" name="radio" id="language__radio-RU" data-inputLanguage="ru" checked>
+            <label class="language__label" for="language__radio-RU" tabindex="0">
+              <span class="language__span">RU</span>
+              <div class="language__line"></div>
+              <span class="language__span--description">Русский</span>
+            </label>
+          </li>
+          <li class="language__item language__item--line"></li>
+          <li class="language__item">
+            <input class="visually-hidden language__radio" type="radio" name="radio" id="language__radio-EN" data-inputLanguage="en">
+            <label class="language__label" for="language__radio-EN" tabindex="0">
+              <span class="language__span">EN</span>
+              <div class="language__line"></div>
+              <span class="language__span--description">English</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="main-nav__partner partner">
+        <button class="partner__button button button--fill" data-lang="becomePartner">Стать партнером</button>
+        <ul class="main-nav__list partner__list">
+          <li class="partner__item">
+            <a class="main-nav__link" href="tel:+74723430566">+7(47234) 3-05-66</a>
+          </li>
+          <li class="partner__item partner__item--desktop">
+            <a class="main-nav__link" href="tel:+79524308830">+7 (952) 430-88-30</a>
+          </li>
+          <li class="partner__item partner__item--desktop">
+            <a class="main-nav__link" target="_blanck" rel="noopener noreferrer"
+              href="mailto:afbelnpo@gmail.com">afbelnpo@gmail.com</a>
+          </li>
+          <li class="partner__item partner__item--desktop">
+            <a class="main-nav__link" href="https://yandex.ru/maps/-/CCUZUDxb-A">
+              <span data-lang="addressStart">309856, Белгородская обл.,</span><br>
+              <span data-lang="addressEnd">г. Алексеевка, тер. Опытная станция</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-nav__social social">
+        <a href="" class="main-nav__link social__link">Ok</a>
+        <a href="https://vk.com/npoalex" class="main-nav__link social__link">Vk</a>
+      </div>
+    </nav>
+  </header>
+  <!-- END HEADER -->
+
+<!-- MAIN -->
+<main class="page__main" data-page="delivery">
+  <!-- delivery section-->
+  <section class="delivery">
+    <h2 class="delivery__title title--page" data-lang="deliveryPayment">Доставка и оплата</h2>
+    <p class="delivery__paragraph">
+      <span class="delivery__span">
+        <span data-lang="deliveryBlock1Start">После отправления заявки</span>
+        <span class="weight--600" data-lang="deliveryBlock1Body">наш менеджер свяжется с вами в течение 1 часа</span>
+        <span data-lang="deliveryBlock1End">для уточнения деталей.</span>
+      </span>
+      <span class="delivery__span">
+        <span class="weight--600" data-lang="deliveryBlock2Start">Мы доставляем</span>
+        <span data-lang="deliveryBlock2End">
+          нашу продукцию в любой город России, а также в страны ближнего и
+          дальнего зарубежья собственным автопарком или с помощью транспортных компаний: КС «СДЭК», 
+          ТК «Деловые Линии», ООО «ПЭК». Мы поможем вам подобрать оптимальный способ доставки.
+        </span>
+      </span>
+      <span class="delivery__span">
+        <span class="weight--600" data-lang="deliveryBlock3Start">Отгрузка</span>
+        <span data-lang="deliveryBlock3End">производится после 100% предоплаты в течение 1-5 рабочих дней.</span>
+      </span>
+      <span class="delivery__span">
+        <span class="weight--600" data-lang="deliveryBlock4Start">Для покупателей из других стран</span>
+        <span data-lang="deliveryBlock4End">доступна оплата через международный банковский перевод по системе SWIFT.</span>
+      </span>
+    </p>
+  </section>
+  <!-- END delivery section-->
+
+  <!-- feedback section-->
+  <section class="feedback feedback--big-padding">
+    <svg class="wave--top" viewBox="0 0 1440 180" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path style="transform:translate(0, 0px); opacity:1" fill="#ffffff"
+        d="M0,0L80,0C160,0,320,0,480,24C640,48,800,96,960,123C1120,150,1280,156,1440,132C1600,108,1760,54,1920,54C2080,54,2240,108,2400,120C2560,132,2720,102,2880,75C3040,48,3200,24,3360,15C3520,6,3680,12,3840,33C4000,54,4160,90,4320,102C4480,114,4640,102,4800,108C4960,114,5120,138,5280,138C5440,138,5600,114,5760,105C5920,96,6080,102,6240,99C6400,96,6560,84,6720,87C6880,90,7040,108,7200,114C7360,120,7520,114,7680,105C7840,96,8000,84,8160,93C8320,102,8480,132,8640,120C8800,108,8960,54,9120,27C9280,0,9440,0,9600,18C9760,36,9920,72,10080,99C10240,126,10400,144,10560,129C10720,114,10880,66,11040,66C11200,66,11360,114,11440,138L11520,162L11520,180L11440,180C11360,180,11200,180,11040,180C10880,180,10720,180,10560,180C10400,180,10240,180,10080,180C9920,180,9760,180,9600,180C9440,180,9280,180,9120,180C8960,180,8800,180,8640,180C8480,180,8320,180,8160,180C8000,180,7840,180,7680,180C7520,180,7360,180,7200,180C7040,180,6880,180,6720,180C6560,180,6400,180,6240,180C6080,180,5920,180,5760,180C5600,180,5440,180,5280,180C5120,180,4960,180,4800,180C4640,180,4480,180,4320,180C4160,180,4000,180,3840,180C3680,180,3520,180,3360,180C3200,180,3040,180,2880,180C2720,180,2560,180,2400,180C2240,180,2080,180,1920,180C1760,180,1600,180,1440,180C1280,180,1120,180,960,180C800,180,640,180,480,180C320,180,160,180,80,180L0,180Z">
+      </path>
+    </svg>
+    <div class="feedback__content">
+      <h2 class="feedback__title subtitle2">
+        <span data-lang="feedbackTitleStart">Оставьте свои контактные данные</span>
+        <span class="green-title" data-lang="feedbackTitleEnd">и наш отдел продаж свяжется с вами в ближайшее время</span>
+      </h2>
+      <div class="feedback__form">
+        <ul class="feedback__list">
+          <li class="feedback__item feedback__item--input">
+            <input class="feedback__input" name="Поле ввода имени" placeholder="Имя" type="text" data-input="name" data-placeholderLanguage="name">
+            <span class="feedback__span--required" data-lang="required">Необходимо заполнить это поле</span>
+          </li>
+          <li class="feedback__item feedback__item--input">
+            <input class="feedback__input" name="Поле ввода телефона" placeholder="Номер телефона" type="tel" data-input="phone" data-placeholderLanguage="phoneNumber">
+            <span class="feedback__span--required" data-lang="required">Необходимо заполнить это поле</span>
+          </li>
+          <li class="feedback__item feedback__item--button">
+            <button class="feedback__button button button--fill" data-lang="contactUs">Связаться с нами</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <picture class="feedback__picture">
+      <source srcset="" media="(min-width: 1280px)">
+      <img class="feedback__img" src="" alt="A">
+    </picture>
+  </section>
+  <!-- END feedback section-->
+  
+</main>
+<!--END MAIN -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__logo">
+    <svg class="footer__svg--logo">
+      <use xlink:href=""></use>
+    </svg>
+    <a href="https://vk.com/npoalex" class="footer__link footer__link--social">Vkontakte</a>
+    <a href="#" class="footer__link footer__link--social">Odnoklassniki</a>
+  </div>
+  <div class="footer__nav--page">
+    <ul class="footer__list">
+      <li class="footer__item"><a href="./index.html" class="footer__link" data-lang="index">Главная</a></li>
+      <li class="footer__item"><a href="./catalog.html" class="footer__link" data-lang="catalog">Каталог</a></li>
+      <li class="footer__item" data-ellanguage="en"><button class="footer__link button footer__button--partner" data-lang="forPartner">Партнерам</button></li>
+      <li class="footer__item"><a href="./delivery.html" class="footer__link" data-lang="deliveryPayment">Доставка и оплата</a></li>
+      <li class="footer__item"><a href="./contacts.html" class="footer__link" data-lang="contacts">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="footer__nav--contacts">
+    <ul class="footer__list">
+      <li class="footer__item"><a href="tel:+74723430566" class="footer__link">+7(47234) 3-05-66</a></li>
+      <li class="footer__item"><a href="tel:+79524308830" class="footer__link">+7 (952) 430-88-30</a></li>
+      <li class="footer__item">
+        <a target="_blanck" rel="noopener noreferrer" href="mailto:afbelnpo@gmail.com"
+          class="footer__link">afbelnpo@gmail.com</a>
+      </li>
+      <li class="footer__item">
+        <a href="https://yandex.ru/maps/-/CCUZUDxb-A" class="footer__link">
+          <span data-lang="addressStart">309856, Белгородская обл.,</span><br>
+          <span data-lang="addressEnd">г. Алексеевка, тер. Опытная станция</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer__logo--export">
+    <img class="footer__img--export footer__img--unactiv" src="" alt="">
+    <img class="footer__img--export footer__img--activ" src="" alt="">
+    <a class="footer__link footer__link--export" href="https://export31.ru/">
+      <span class="footer__span footer__span--export">
+        <span data-lang="footerLogoStart">Центр поддержки экспорта</span><br>
+        <span data-lang="footerLogoEnd">Белгородской области</span>
+      </span>
+      <span class="footer__span footer__span--link">www.export31.ru</span>
+    </a>
+  </div>
+</footer>
+<!-- END FOOTER -->
+
+</body>
+</html>

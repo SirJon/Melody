@@ -1,0 +1,369 @@
+.footer {
+  position: relative;
+
+  margin: 0 auto 48px;
+  padding: 0 $mobile-padding;
+  box-sizing: border-box;
+  min-width: $mobile-width-min;
+
+  @media (min-width: $mobile-width-mid) {
+    padding: 0 $table-padding;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    padding: 0 $desktop-padding-min;
+  }
+}
+
+.footer-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $white-40;
+    top: 0;
+    left: 0;
+  }
+
+  .footer-burger__list {
+    font-weight: 400;
+  }
+
+  @media(max-width: $mobile-width-mid) {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: calc($mobile-width-mid + 1px)) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 21px;
+  }
+}
+
+.footer-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 10px;
+  line-height: 14px;
+
+  @media (min-width: $table-width-min) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.footer-nav__list--logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (min-width: $desktop-width-mid) {
+    gap: 16px;
+  }
+}
+
+.footer-nav__list--installation {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-transform: uppercase;
+}
+
+.footer-nav__list--delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width-min) {
+    min-width: 119px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    min-width: 160px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    min-width: 190px;
+  }
+}
+
+.footer-nav__list--address {
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (min-width: $table-width-min) {
+    margin: 0;
+    gap: 8px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    grid-column: 5/7;
+    gap: 14px;
+  }
+}
+
+.footer-nav__list--logo,
+.footer-nav__list--installation,
+.footer-nav__list--delivery {
+  @media(max-width: $desktop-width-min) {
+    display: none;
+  }
+}
+
+.footer-nav__item {
+  cursor: pointer;
+  width: max-content;
+
+  @media (min-width: $desktop-width-min) {
+
+    &:hover,
+    &:focus {
+      color: $green-hover;
+    }
+
+    transition: all 0.3s ease-out;
+  }
+}
+
+.footer-nav__item--title {
+  font-weight: 500;
+  cursor: default;
+}
+
+.footer-nav__span {
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 16px;
+  z-index: 1;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    font-size: 9px;
+    line-height: 16px;
+  }
+}
+
+.footer-nav__span--email {
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 14px;
+
+  color: $email;
+}
+
+.footer-nav__span--logo {
+  font-weight: 600;
+  font-size: 6px;
+  line-height: 8px;
+
+  @media (min-width: $desktop-width-mid) {
+    font-size: 7px;
+    line-height: 9px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 9px;
+    line-height: 12px;
+  }
+}
+
+.footer-nav__link {
+
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.footer-nav__link--logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @media (min-width: $desktop-width-min) {
+
+    &:hover,
+    &:focus {
+      color: $green-hover;
+
+      .footer-nav__svg--logo {
+        fill: $green-hover;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    gap: 7px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    gap: 9px;
+  }
+}
+
+.footer-nav__img--logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.footer-nav__img--logo-hover {
+  opacity: 0;
+}
+
+.footer-nav__link--banner {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+
+  width: max-content;
+  box-sizing: border-box;
+
+  padding: 10px 18px;
+  margin: 0;
+
+  @media(max-width: $mobile-width-mid) {
+    order: -1;
+  }
+
+  @media (min-width: $table-width-min) {
+    margin: 0;
+    gap: 16px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    padding: 5px 18px;
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    height: 77px;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      padding: 5px 22px;
+      height: 85px;
+      bottom: -12px;
+
+      .footer-nav__img--logo-unhover {
+        opacity: 0;
+      }
+
+      .footer-nav__img--logo-hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    height: 88px;
+    bottom: 0;
+
+    &:hover,
+    &:focus {
+      height: 97px;
+      bottom: -4px;
+    }
+  }
+
+  @media (min-width: $desktop-width-max) {
+    height: 110px;
+
+    &:hover,
+    &:focus {
+      height: 121px;
+      bottom: -5px;
+    }
+  }
+}
+
+.footer-nav__svg--logo {
+  width: 32px;
+  height: 35px;
+  fill: $green;
+
+  @media (min-width: $desktop-width-mid) {
+    width: 43px;
+    height: 48px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    width: 54px;
+    height: 60px;
+  }
+}
+
+.footer-nav__button {
+  width: 79px;
+  padding: 5px 0 4px;
+  border: 1px solid $green;
+  border-radius: 4px;
+
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+
+  @media (min-width: $desktop-width-mid) {
+    width: 93px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    width: 111px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

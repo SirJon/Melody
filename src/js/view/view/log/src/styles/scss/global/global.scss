@@ -1,0 +1,201 @@
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.page__body {
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  max-width: $desktop-width-max;
+}
+
+.page__main {
+  margin-top: 55px;
+  @media (min-width: $desktop-width-min){
+    margin-top: 75px;
+  }
+}
+
+.button {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button--fill {
+  background: $pink;
+  border-radius: 500px;
+  color: $white;
+
+  @media (min-width: $desktop-width-min) {
+    transition: all 0.2s ease-in;
+
+    &:focus,
+    &:hover {
+      background: $focus;
+    }
+  }
+
+  @include disabled--button;
+}
+
+.button--border {
+  outline: 1px solid $violet;
+  border-radius: 500px;
+  color: $black;
+
+  @media (min-width: $desktop-width-min) {
+    transition: all 0.2s ease-in;
+
+    &:focus,
+    &:hover {
+      color: $white;
+      background: $focus;
+    }
+  }
+
+  @include disabled--button;
+}
+
+.link {
+  text-decoration: none;
+  font-family: inherit;
+  font-style: inherit;
+  color: inherit;
+}
+
+.gradient--text {
+  background-color: rgba(128, 29, 129, 0.8);
+
+  background-image: linear-gradient(159.48deg, rgba(236, 96, 159, 0.8) 15.94%, rgba(128, 29, 129, 0.8) 50.71%, rgba(110, 30, 121, 0.496) 102.64%);
+
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.title--point {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba($color: $blue, $alpha: 0.25);
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -15px;
+
+    @media (min-width: $desktop-width-min) {
+      width: 22px;
+      height: 22px;
+      right: -25px;
+    }
+  }
+}
+
+.title--h2 {
+  font-family: 'Appetite';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 21px;
+
+  @media (min-width: $table-width-min) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 28px;
+    line-height: 21px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+}
+
+.text--description {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: $black-70;
+
+  @media (min-width: $table-width-min) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 18px;
+    line-height: 29px;
+  }
+}
+
+.br--table-hide {
+  @media (min-width: $table-width-min) {
+    display: none;
+  }
+}
+
+.br--desctop-hide {
+  @media (min-width: $desktop-width-min) {
+    display: none;
+  }
+}
+
+a {
+  @media (min-width: $desktop-width-min) {
+    transition: all 0.3s ease-in;
+  }
+}

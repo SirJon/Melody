@@ -1,0 +1,126 @@
+.credit-popup__info{
+  display: flex;
+  gap: 28px;
+  margin: 0 0 50px;
+}
+
+.credit-popup__img-wrapper{
+  position: relative;
+  min-width: 70px;
+  width: 70px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  &::after{
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(226.86deg, rgba(30, 168, 74, 0) -5.14%, rgb(10, 61, 20) 100.19%);
+    border-radius: 56px;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  @media (min-width: $table-width-min) and (max-width: $table-width-max){
+    width: 80px;
+    min-width: 80px;
+    &::after{      
+      width: 80px;
+      height: 80px;
+    }
+  }
+  @media (min-width: $desktop-width-mid){
+    width: 80px;
+    min-width: 80px;
+    &::after{      
+      width: 80px;
+      height: 80px;
+    }
+  }
+  @media (min-width: $desktop-width-max){
+    min-width: 100px;
+    width: 100px;
+    height: 120px;
+    &::after{      
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.credit-popup__img{
+  width: 56px;
+  height: 77px;
+  z-index: 2;
+  @media (min-width: $table-width-min) and (max-width: $table-width-max){
+    width: 64px;
+    height: 88px;
+  }
+  @media (min-width: $desktop-width-mid){
+    width: 64px;
+    height: 88px;
+  }
+  @media (min-width: $desktop-width-max){
+    width: 80px;
+    height: 100px;
+  }
+}
+
+.credit-popup__paragraph{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+}
+
+.credit-popup__span--title{
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 35px;
+  margin: 0 0 10px;
+  @media (min-width: $table-width-min) and (max-width: $table-width-max){
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 14px;
+  }
+}
+
+.credit-popup__span--equipment{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  @media (min-width: $table-width-min) and (max-width: $table-width-max){
+    font-size: 16px;
+    line-height: 25px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+}
+
+.credit-popup__span--info{
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $black-70;
+  @media (min-width: $table-width-min) and (max-width: $table-width-max){
+    font-size: 12px;
+    line-height: 15px;
+  }
+  @media (min-width: $desktop-width-max){
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

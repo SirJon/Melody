@@ -1,0 +1,259 @@
+.catalog {
+  padding: 50px $padding 0;
+
+  @media (min-width: $mobile-width-mid) {
+    padding: 50px $padding-catalog 0;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    padding-bottom: 140px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    padding: 65px $padding-catalog 155px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    padding-bottom: 190px;
+  }
+}
+
+.catalog--close {
+  display: none;
+}
+
+.catalog__title {
+  padding-bottom: 10px;
+  margin: 0 0 55px;
+
+  @media (min-width: $table-width-min) {
+    margin-bottom: 65px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    margin-bottom: 65px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    margin-bottom: 80px;
+  }
+}
+
+.catalog__list {
+  margin: 0 0 50px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+
+  @media (min-width: $desktop-width-max) {
+    margin-bottom: 65px;
+  }
+}
+
+.catalog__item {
+  display: flex;
+}
+
+.catalog__label{
+  transition: all 0.2s ease-in;
+}
+
+.catalog__radio {
+  &+.catalog__label {
+    border: 1px solid transparent;
+    padding: 12px 18px;
+    border-radius: 144px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: $black-70;
+
+    cursor: pointer;
+
+    @media (min-width: $table-width-min) {
+      font-size: 14px;
+      line-height: 14px;
+      padding: 14px 21px;
+    }
+
+    @media (min-width: $desktop-width-min) {
+      padding: 12px 18px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    @media (min-width: $desktop-width-max) {
+      font-size: 14px;
+      line-height: 14px;
+      padding: 14px 21px;
+    }
+  }
+
+  &:checked {
+    &+.catalog__label {
+      font-weight: 600;
+      color: $black;
+      border-color: $pink;
+    }
+  }
+
+  &:hover,
+  &:focus{
+    &+.catalog__label {
+      background: $focus;
+      border-color: $focus;
+      color: $white;
+    }
+  }
+
+  &:disabled {
+    &+.catalog__label {
+      border: none;
+      color: $white-70;
+      background: $disabled;
+      pointer-events: none;
+    }
+  }
+}
+
+.catalog__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 42px 7px;
+
+  @media (min-width: $mobile-width-mid) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $desktop-width-min) {
+    gap: 56px 21px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    gap: 70px 21px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    gap: 80px 24px;
+  }
+}
+
+.catalog__product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.catalog__wrapper--img {
+  width: 100%;
+  padding-top: 105%;
+
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: $desktop-width-min) {
+    &:hover {
+      .catalog__img--main {
+        opacity: 0;
+      }
+
+      .catalog__img--hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.catalog__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-in;
+}
+
+.catalog__img--main {
+  opacity: 1;
+}
+
+.catalog__img--hover {
+  opacity: 0;
+}
+
+.catalog__span--name {
+  font-size: 18px;
+  line-height: 18px;
+  margin: 21px 0 7px;
+  text-align: center;
+
+  @media (min-width: $table-width-min) {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 24px 0 8px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 21px;
+    line-height: 21px;
+    margin: 21px 0 7px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 24px 0 9px;
+  }
+}
+
+.catalog__span--cake {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+
+  text-transform: uppercase;
+
+  color: $captionBlue;
+
+  @media (min-width: $table-width-min) {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width-min) {
+    font-size: 10px;
+    line-height: 10px;
+  }
+
+  @media (min-width: $desktop-width-mid) {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $desktop-width-max) {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+.catalog__span--empty{
+  display: none;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.catalog__span--loading{
+  font-size: 20px;
+  line-height: 24px;
+}
