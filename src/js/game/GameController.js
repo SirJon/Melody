@@ -1,30 +1,33 @@
-import { questions } from "../data/game";
+import { GameSettings, initialState, questions } from "../data/game";
+import LevelArtistScreen from "../screen/level-artist-screen";
+import LevelGenreScreen from "../screen/level-genre-screen";
 import showScreen from "../utils/show-screen";
-import LevelArtistView from "../view/level-artist-view";
-import LevelGenreView from "../view/level-genre-view";
 import ResultWinView from "../view/resilt-win-view";
 import ResultFalseView from "../view/result-false-view";
 
-const questionView = {
-  level: LevelArtistView,
-  genre: LevelGenreView,
-}
+const QuestionScreen = {
+  artist: LevelArtistScreen,
+  genre: LevelGenreScreen,
+};
 
 export default class GameController {
   constructor(model) {
     this.model = model;
-
     this._timer = null;
+    this.screen = new QuestionScreen[`${this.model.state.getQuestionsType()}`](this.model.state.gameSettings, this.model.state, this.model.screenQuestion());
+
+    console.log(this.model)
 
     //таймеры работали, игра переключалась, жизни отнемались, игра отсанавливалась
   }
 
   get element() {
-    return (new questionView.level().render());
+    return this.screen.render();
   }
 
-  startGame() {
-    showScreen(this.element);
+  showNextGame() {
+    showScreen(new GameController(this.model).element);
+    this.model.changeLevel();
   }
 
   stopGame() { }

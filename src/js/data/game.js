@@ -40,7 +40,7 @@ export const questions = [
       },
       {
         "image": {
-          "url": "https://www.placecage.com/705/455",
+          "url": "https://placekitten.com/703/455",
           "width": 134,
           "height": 134
         },
@@ -129,6 +129,8 @@ export const initialState = {
   timer: null,
   mistakes: 0,
   level: 0,
+  questions: questions,
+  gameSettings: GameSettings,
   get time() {
     if (this.timer === null) {
       return GameSettings.MAX_GAME_TIME;
@@ -140,7 +142,10 @@ export const initialState = {
     this.timer = null;
     this.mistakes = 0;
     this.level = 0;
-  }
+  },
+  getQuestionsType() {
+    return this.questions[this.level].type;
+  },
 };
 
 export const currentPlayer = {

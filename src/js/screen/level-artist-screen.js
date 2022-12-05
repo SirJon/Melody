@@ -1,3 +1,5 @@
+import Router from "../game/Router";
+import { getNode } from "../utils";
 import LevelArtistView from "../view/level-artist-view";
 
 export default class LevelArtistScreen {
@@ -8,6 +10,10 @@ export default class LevelArtistScreen {
 
   get element() {
     return this.screen.element
+  }
+
+  render() {
+    return (this.element);
   }
 
   bind() {
