@@ -1,6 +1,5 @@
 // import { questions } from "../data/game";
 
-// const getLevel = (state) => questions[state.level];
 
 // export default class GameModel {
 //   constructor(questions, initialState) {
@@ -56,7 +55,7 @@ export default class GameModel {
   }
 
   get state() {
-    return this._state;
+    return Object.assign({}, this._state);
   }
 
   screenQuestion() {
@@ -67,8 +66,17 @@ export default class GameModel {
     return this._state.level++;
   }
 
+  getLevel(level) {
+    return this._state.questions[level];
+  }
+
+
+  hasLevel() {
+    return this.getLevel(this._state.level) !== void 0;
+  }
+
   restart() {
-    this._state = Object.assign({}, initialState, {answers: []});
+    this._state = Object.assign({}, initialState, { answers: [] });
   }
 
   fail() {
@@ -76,7 +84,7 @@ export default class GameModel {
   }
 
   win() {
-    return this._state.answers.length === this._state.questions.length;
+    return this._state.level === this._state.questions.length;
   }
 
   getAnswerTime() {
@@ -88,7 +96,7 @@ export default class GameModel {
     if (!correct) {
       this._state.lives--;
     }
-    this._state.answers.push({correct, time: this.getAnswerTime()});
+    this._state.answers.push({ correct, time: this.getAnswerTime() });
   }
 
   tick() {

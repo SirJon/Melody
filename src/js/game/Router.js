@@ -15,8 +15,18 @@ export default class Application {
     gameController.showNextGame();
   }
 
-  static endGame(stats) {
-    const statistics = new StatsScreen(stats);
-    showScreen(statistics.element);
+  static nextLevel(model) {
+    if (model.hasLevel()) {
+      const gameController = new GameController(model);
+      gameController.showNextGame();
+    } else {
+      this.endGame(model)
+    }
+  }
+
+  static endGame(model) {
+    // const statistics = new StatsScreen(stats);
+    // showScreen(statistics.element);
+    console.log(model);
   }
 }

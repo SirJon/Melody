@@ -1,11 +1,12 @@
 import Router from "../game/Router";
-import { getNode } from "../utils";
 import LevelArtistView from "../view/level-artist-view";
 
 export default class LevelArtistScreen {
-  constructor(GameSettings, state, question) {
+  constructor(GameSettings, state, question, model) {
     this.screen = new LevelArtistView(GameSettings, state, question);
     this.bind();
+
+    this.model = model;
   }
 
   get element() {
@@ -17,6 +18,6 @@ export default class LevelArtistScreen {
   }
 
   bind() {
-    this.screen.onClick = () => Router.startGame()
+    this.screen.onClick = () => Router.nextLevel(this.model);
   }
 };

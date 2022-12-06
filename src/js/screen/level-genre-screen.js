@@ -1,11 +1,12 @@
 import Router from "../game/Router";
-import { getNode } from "../utils";
 import LevelGenreView from "../view/level-genre-view";
 
 export default class LevelGenreScreen {
-  constructor(GameSettings, state, question) {
+  constructor(GameSettings, state, question, model) {
     this.screen = new LevelGenreView(GameSettings, state, question);
     this.bind();
+
+    this.model = model;
   }
 
   get element() {
@@ -17,6 +18,6 @@ export default class LevelGenreScreen {
   }
 
   bind() {
-    this.screen.onClick = () => Router.startGame()
+    this.screen.onClick = () => Router.nextLevel(this.model);
   }
 };
