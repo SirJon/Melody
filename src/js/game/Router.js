@@ -16,17 +16,34 @@ export default class Application {
   }
 
   static nextLevel(model) {
+
+    // Если кончилось время или игрок совершил максимально возможное количество ошибок
+    if (model.fail()) {
+      this.failGame(model);
+      return;
+    };
+
+    // Если игрок в процессе игры
     if (model.hasLevel()) {
       const gameController = new GameController(model);
       gameController.showNextGame();
-    } else {
-      this.endGame(model)
-    }
+      return;
+    };
+
+    // Если игрок прошел все уровни
+    if (model.win()) {
+      this.winGame(model);
+    };
+    
   }
 
-  static endGame(model) {
+  static winGame(model) {
     // const statistics = new StatsScreen(stats);
     // showScreen(statistics.element);
-    console.log(model);
+    console.log(`winGame`);
+  }
+
+  static failGame(model) {
+    console.log(`FailScreen`);
   }
 }
